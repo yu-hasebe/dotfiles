@@ -1,0 +1,10 @@
+font:
+  normal:
+    style: Italic
+  bold:
+    style: Bold Italic
+  italic:
+    style: Italic
+  bold_italic:
+    style: Bold Italic
+  size: 13.0
