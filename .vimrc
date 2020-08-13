@@ -64,3 +64,8 @@ call plug#begin()
     au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html :Autoformat
     Plug 'vim-airline/vim-airline'
 call plug#end()
+
+noremap <left> <nop>
+noremap <down> <nop>
+noremap <up> <nop>
+noremap <right> <nop>
