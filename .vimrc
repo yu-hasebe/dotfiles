@@ -62,4 +62,5 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'Chiel92/vim-autoformat'
     au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html :Autoformat
+    Plug 'vim-airline/vim-airline'
 call plug#end()
