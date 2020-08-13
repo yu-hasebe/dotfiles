@@ -26,8 +26,6 @@ tnoremap <c-j> <c-w><c-j>
 tnoremap <c-k> <c-w><c-k>
 tnoremap <c-l> <c-w><c-l>
 
-set foldmethod=indent
-
 set wildmenu
 set wildmode=list:longest,full
 
@@ -36,6 +34,8 @@ set number relativenumber
 set clipboard=unnamed
 
 set tags=tags;
+
+set hlsearch
 
 inoremap { {}<Left>
 inoremap [ []<Left>
