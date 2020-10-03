@@ -61,6 +61,7 @@ call plug#begin()
     " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
     Plug 'tpope/vim-fugitive'
     Plug 'Chiel92/vim-autoformat'
-    au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html :Autoformat
+    au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html,*.css,*.json :Autoformat
+    au FileType html setlocal tabstop=2 shiftwidth=2
     Plug 'vim-airline/vim-airline'
 call plug#end()
