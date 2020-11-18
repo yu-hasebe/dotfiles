@@ -1,0 +1,10 @@
+/.cache/
+/.cargo/
+/.profile
+/.rustup/
+/.vim/
+/.viminfo
+/.zprofile
+/.zsh_history
+/Desktop/
+/Library/
