@@ -2,6 +2,7 @@
 /.cargo/
 /.profile
 /.rustup/
+/.ssh/
 /.vim/
 /.viminfo
 /.zprofile
