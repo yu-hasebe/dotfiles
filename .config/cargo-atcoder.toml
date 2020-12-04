@@ -15,6 +15,8 @@ panic = 'abort'
 
 # dependencies added to new project
 [dependencies]
+itertools = "0.9.0"
+petgraph = "0.5.0" 
 proconio = { version = "=0.3.6", features = ["derive"] }
 # competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
 
@@ -24,16 +26,30 @@ proconio = { version = "=0.3.6", features = ["derive"] }
 
 # source code template
 template = """
-#[allow(unused)]
+use itertools::Itertools;
+use petgraph::graph::UnGraph;
 use proconio::marker::*;
 use proconio::{fastout, input};
-#[allow(unused)]
-use std::cmp::{max, min, Reverse};
-#[allow(unused)]
-use std::collections::{BinaryHeap, HashMap, HashSet, VecDeque};
+use std::collections::HashMap;
 
 #[fastout]
 fn main() {
-    unimplemented!();
+}
+
+use num::traits::One;
+use petgraph::graph::{IndexType, NodeIndex};
+use proconio::source::{Readable, Source};
+use std::io::BufRead;
+use std::marker::PhantomData;
+use std::ops::Sub;
+
+struct NodeIndex1<T>(PhantomData<fn() -> T>);
+
+impl<T: IndexType + Readable<Output = T> + One + Sub<Output = T>> Readable for NodeIndex1<T> {
+    type Output = NodeIndex<T>;
+
+    fn read<R: BufRead, S: Source<R>>(source: &mut S) -> NodeIndex<T> {
+        NodeIndex::from(T::read(source) - T::one())
+    }
 }
 """
