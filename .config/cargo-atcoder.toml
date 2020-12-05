@@ -16,6 +16,7 @@ panic = 'abort'
 # dependencies added to new project
 [dependencies]
 itertools = "0.9.0"
+num = "0.2.1"
 petgraph = "0.5.0" 
 proconio = { version = "=0.3.6", features = ["derive"] }
 # competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
@@ -26,11 +27,18 @@ proconio = { version = "=0.3.6", features = ["derive"] }
 
 # source code template
 template = """
+#[allow(unused_imports)]
 use itertools::Itertools;
-use petgraph::graph::UnGraph;
+#[allow(unused_imports)]
+use petgraph::{data::FromElements, graph::UnGraph, unionfind::UnionFind};
+#[allow(unused_imports)]
 use proconio::marker::*;
+#[allow(unused_imports)]
 use proconio::{fastout, input};
-use std::collections::HashMap;
+#[allow(unused_imports)]
+use std::cmp::{max, min};
+#[allow(unused_imports)]
+use std::collections::{HashMap, VecDeque};
 
 #[fastout]
 fn main() {
@@ -43,6 +51,7 @@ use std::io::BufRead;
 use std::marker::PhantomData;
 use std::ops::Sub;
 
+#[allow(dead_code)]
 struct NodeIndex1<T>(PhantomData<fn() -> T>);
 
 impl<T: IndexType + Readable<Output = T> + One + Sub<Output = T>> Readable for NodeIndex1<T> {
