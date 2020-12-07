@@ -64,4 +64,9 @@ call plug#begin()
     au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html,*.css,*.json :Autoformat
     au FileType html setlocal tabstop=2 shiftwidth=2
     Plug 'vim-airline/vim-airline'
+
+    " rust
+    Plug 'rust-lang/rust.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
 call plug#end()
