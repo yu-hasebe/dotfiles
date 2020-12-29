@@ -61,4 +61,57 @@ impl<T: IndexType + Readable<Output = T> + One + Sub<Output = T>> Readable for N
         NodeIndex::from(T::read(source) - T::one())
     }
 }
+
+struct SegmentTree<T, U> {
+    n: usize,
+    dat: Vec<T>,
+    op: U,
+    e: T,
+}
+
+impl<T, U> SegmentTree<T, U>
+where
+    U: Fn(T, T) -> T,
+    T: Copy,
+{
+    pub fn new(n: usize, op: U, e: T) -> Self {
+        let mut m = 1;
+        while m < n {
+            m *= 2;
+        }
+        Self {
+            n: m,
+            dat: vec![e; 2 * m - 1],
+            op,
+            e,
+        }
+    }
+
+    pub fn update(&mut self, idx: usize, val: T) {
+        let mut idx = idx + self.n - 1;
+        self.dat[idx] = val;
+        while idx > 0 {
+            idx = (idx - 1) / 2;
+            self.dat[idx] = (self.op)(self.dat[2 * idx + 1], self.dat[2 * idx + 2]);
+        }
+    }
+
+    pub fn query(&self, l: usize, r: usize) -> T {
+        let mut l = l + self.n - 1;
+        let mut r = r + self.n - 1;
+        let mut left = self.e;
+        let mut right = self.e;
+        while l < r {
+            if (l & 1) == 0 {
+                left = (self.op)(left, self.dat[l]);
+            }
+            if (r & 1) == 0 {
+                right = (self.op)(self.dat[r - 1], right);
+            }
+            l = l / 2;
+            r = (r - 1) / 2;
+        }
+        (self.op)(left, right)
+    }
+}
 """
