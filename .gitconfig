@@ -1,4 +1,2 @@
-# This is Git's per-user configuration file.
-[user]
-	name = yu-hasebe
-	email = yu.has128@gmail.com
+[init]
+	defaultBranch = main

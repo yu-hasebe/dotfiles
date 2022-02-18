@@ -6,14 +6,14 @@ set tabstop=4
 set shiftwidth=4
 set backspace=2
 
-if !isdirectory(expand("$HOME/.vim/swap"))
-    call mkdir(expand("$HOME/.vim/swap"), "p")
+if !isdirectory(expand('$HOME/.vim/swap'))
+    call mkdir(expand('$HOME/.vim/swap'), 'p')
 endif
 set directory=$HOME/.vim/swap//
 
 set undofile
-if !isdirectory(expand("$HOME/.vim/undodir"))
-    call mkdir(expand("$HOME/.vim/undodir"), "p")
+if !isdirectory(expand('$HOME/.vim/undodir'))
+    call mkdir(expand('$HOME/.vim/undodir'), 'p')
 endif
 set undodir=$HOME/.vim/undodir
 
@@ -54,19 +54,20 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-    Plug 'tpope/vim-vinegar'
-    let g:ctrlp_working_path_mode = 'ra'
-    Plug 'ctrlpvim/ctrlp.vim'
-    " let g:plug_timeout = 300
-    " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-    Plug 'tpope/vim-fugitive'
-    Plug 'Chiel92/vim-autoformat'
-    au BufWrite *.rs,*.go,*.rb,*.js,*.ts,*.html,*.css,*.json :Autoformat
-    au FileType html setlocal tabstop=2 shiftwidth=2
-    Plug 'vim-airline/vim-airline'
-
-    " rust
-    Plug 'rust-lang/rust.vim'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
+    Plug 'google/vim-maktaba'
+    Plug 'google/vim-codefmt'
+    Plug 'google/vim-glaive'
+    Plug 'arcticicestudio/nord-vim'
 call plug#end()
+
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  autocmd FileType javascript AutoFormatBuffer prettier
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+augroup END
