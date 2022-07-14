@@ -47,27 +47,7 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.github.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 call plug#begin()
-    Plug 'google/vim-maktaba'
-    Plug 'google/vim-codefmt'
-    Plug 'google/vim-glaive'
-    Plug 'arcticicestudio/nord-vim'
+	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
-
-augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
-  autocmd FileType javascript AutoFormatBuffer prettier
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer yapf
-augroup END
