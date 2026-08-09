@@ -31,7 +31,7 @@ vim.cmd("syntax enable")
 vim.cmd("filetype plugin indent on")
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme("hatsunemiku")
+vim.cmd.colorscheme("goldensun")
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 
