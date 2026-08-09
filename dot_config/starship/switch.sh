@@ -1,5 +1,3 @@
-set -euo pipefail
-
 # Usage: source this file (do not execute directly)
 #
 # On source:
@@ -36,7 +34,7 @@ _starship_switch() {
     return 1
   fi
 
-  echo "$theme" > "$_STARSHIP_THEME_FILE"
+  echo "$theme" >"$_STARSHIP_THEME_FILE"
   export STARSHIP_CONFIG="$config_file"
   echo "Switched to: $theme"
 }
