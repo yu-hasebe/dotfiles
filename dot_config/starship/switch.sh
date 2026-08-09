@@ -1,12 +1,17 @@
-_STARSHIP_THEME_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/starship_theme"
+set -euo pipefail
+
+_STARSHIP_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/starship"
+_STARSHIP_THEME_FILE="$_STARSHIP_DIR/theme"
 _STARSHIP_THEMES=(warrior mage rogue archer)
 
 _starship_switch() {
-  local theme="$1"
-  local config_file="${XDG_CONFIG_HOME:-$HOME/.config}/starship_${theme}.toml"
+  local theme="${1:-}"
+  local config_file="$_STARSHIP_DIR/${theme}.toml"
 
   if [[ -z "$theme" ]]; then
-    local current="${$(cat "$_STARSHIP_THEME_FILE" 2>/dev/null):-default}"
+    local current
+    current="$(cat "$_STARSHIP_THEME_FILE" 2>/dev/null)"
+    current="${current:-default}"
     echo "Current theme: $current"
     echo "Available themes: ${_STARSHIP_THEMES[*]}"
     return 0
@@ -32,9 +37,11 @@ alias themes='_starship_switch'
 # Restore persisted theme on shell init
 if [[ -f "$_STARSHIP_THEME_FILE" ]]; then
   _saved_theme="$(cat "$_STARSHIP_THEME_FILE")"
-  _saved_config="${XDG_CONFIG_HOME:-$HOME/.config}/starship_${_saved_theme}.toml"
+  _saved_config="$_STARSHIP_DIR/${_saved_theme}.toml"
   if [[ -f "$_saved_config" ]]; then
     export STARSHIP_CONFIG="$_saved_config"
   fi
   unset _saved_theme _saved_config
+else
+  export STARSHIP_CONFIG="$_STARSHIP_DIR/warrior.toml"
 fi
