@@ -108,4 +108,4 @@ format = ' [│](bright-black) [💪 $duration]($style)'
 disabled = false
 time_format = "%R"
 style = "bold white"
-format = ' [│](bright-black) [☀️ $time]($style)'
+format = ' [│](bright-black) [🌞 $time]($style)'
