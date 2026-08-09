@@ -26,7 +26,7 @@ persona() {
 		printf "  help      show this help\n"
 		;;
 	*)
-		local _toml="${_dir}/starship/${1}.toml"
+		local _toml="${_dir}/${1}.toml"
 		if [ ! -f "$_toml" ]; then
 			printf "Unknown theme: %s\n" "$1" >&2
 			return 1
