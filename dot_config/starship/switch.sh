@@ -1,5 +1,19 @@
 set -euo pipefail
 
+# Usage: source this file (do not execute directly)
+#
+# On source:
+#   - Defines functions: warrior, mage, rogue, archer
+#       Args: none
+#       Output: "Switched to: <theme>"
+#       Side effects: writes theme name to ~/.config/starship/theme,
+#                     exports STARSHIP_CONFIG=~/.config/starship/<theme>.toml
+#   - Defines alias: themes
+#       Args: [theme]  (no arg = show current theme and available list)
+#       Output: same as above, or "Current theme: <theme>\nAvailable themes: ..."
+#   - Restores persisted theme from ~/.config/starship/theme (defaults to warrior)
+#       Side effects: exports STARSHIP_CONFIG
+
 _STARSHIP_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/starship"
 _STARSHIP_THEME_FILE="$_STARSHIP_DIR/theme"
 _STARSHIP_THEMES=(warrior mage rogue archer)
