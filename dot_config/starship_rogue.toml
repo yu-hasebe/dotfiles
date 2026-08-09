@@ -32,9 +32,9 @@ format = ' [│](bright-black) [$symbol]($style)'
 
 [direnv]
 disabled = false
-symbol = "🃏 env:"
+symbol = "🎰 env:"
 style = "bold white"
-allowed_msg = "🎰"
+allowed_msg = "💰"
 denied_msg = "💸"
 format = ' [│](bright-black) [$symbol$allowed]($style)'
 
