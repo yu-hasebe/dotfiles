@@ -1,0 +1,10 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+
+[theme.custom]
+panel_bg = "reset"
+
+[ui]
+accent = "bright-black"
