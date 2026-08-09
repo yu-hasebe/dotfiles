@@ -17,12 +17,13 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Setup
 
+Install [Homebrew](https://brew.sh/), then:
+
 ```sh
 # Install Homebrew packages
 brew bundle install --file Brewfile
 
 # Install dotfiles
-# brew install chezmoi
 chezmoi init --apply yu-hasebe
 ```
 
