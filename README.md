@@ -10,6 +10,15 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 | [Neovim](https://neovim.io/) | Editor |
 | [Starship](https://starship.rs/) | Prompt |
 | [Homebrew](https://brew.sh/) | Package manager (packages listed in `Brewfile`) |
+| [herdr](https://herdr.io/) | Terminal task manager |
+
+## herdr
+
+`~/.config/herdr/config.toml` configures herdr to blend with the terminal's own color scheme:
+
+- `theme.name = "terminal"` — uses terminal colors instead of herdr's built-in palette
+- `theme.custom.panel_bg = "reset"` — transparent panel background
+- `ui.accent = "bright-black"` — accent color mapped to the terminal's bright-black
 
 ## Color scheme
 
