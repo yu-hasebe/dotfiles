@@ -7,11 +7,11 @@ _msg() {
 	printf "\033[1m[%s %s]\033[0m ▶ %s\n" "$_icon" "$_name" "$_text"
 }
 
-nudge() {
+haunt() {
 	local _result _pane
-	trap 'printf "\n"; _msg 👻 nudge "stopped. 🌙"; return 0' INT TERM
+	trap 'printf "\n"; _msg 👻 haunt "stopped. 🌙"; return 0' INT TERM
 
-	_msg 👻 nudge "watching for agents waiting for input (Ctrl+C to stop)..."
+	_msg 👻 haunt "watching for agents waiting for input (Ctrl+C to stop)..."
 
 	while true; do
 		_result=$(herdr agent list 2>/dev/null) || {
