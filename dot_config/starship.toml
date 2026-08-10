@@ -4,7 +4,7 @@ format = """
 [╔](bright-black)$fill[╗](bright-black)
 [║](bright-black) $character$username$sudo$direnv$directory$git_branch$git_status$git_metrics$nodejs$rust$golang$php$python$lua$cmd_duration$time
 [╚](bright-black)$fill[╝](bright-black)
-[▶](bold bright-black) """
+[▶](bold green) """
 
 right_format = ""
 
@@ -15,42 +15,40 @@ style = "bright-black"
 [character]
 disabled = false
 format = '$symbol'
-success_symbol = "🥷"
-error_symbol = "🚨"
+success_symbol = "🪄"
+error_symbol = "💥"
 
 [username]
 show_always = true
-style_user = "bold bright-black"
+style_user = "bold cyan"
 style_root = "bold red"
 format = '[$user]($style)'
 
 [sudo]
 disabled = false
-symbol = "🌑sudo"
-style = "bold white"
+symbol = "👑sudo"
+style = "bold yellow"
 format = ' [│](bright-black) [$symbol]($style)'
 
 [direnv]
 disabled = false
-symbol = "🎰env:"
-style = "bold white"
-allowed_msg = "💰"
-denied_msg = "💸"
+symbol = "🌐env:"
+style = "bold orange"
 format = ' [│](bright-black) [$symbol$allowed]($style)'
 
 [directory]
-style = "bold bright-black"
+style = "bold cyan"
 format = ' [│](bright-black) [🌃$path]($style)'
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-symbol = "🪦"
-style = "bold blue"
+symbol = "🔭"
+style = "bold purple"
 format = ' [│](bright-black) [$symbol$branch]($style)'
 
 [git_status]
-style = "bold blue"
+style = "bold red"
 format = '[$all_status$ahead_behind]($style)'
 conflicted = "✖"
 ahead = "⇡"
@@ -70,42 +68,42 @@ deleted_style = "bold red"
 format = ' [+$added]($added_style)[-$deleted]($deleted_style)'
 
 [nodejs]
-symbol = " "
+symbol = " "
 style = "bold green"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [rust]
-symbol = " "
+symbol = " "
 style = "bold red"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [golang]
-symbol = " "
+symbol = " "
 style = "bold cyan"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [php]
-symbol = " "
+symbol = " "
 style = "bold purple"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [python]
-symbol = " "
+symbol = " "
 style = "bold yellow"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [lua]
-symbol = " "
+symbol = " "
 style = "bold blue"
 format = ' [│](bright-black) [$symbol($version)]($style)'
 
 [cmd_duration]
 min_time = 2_000
-style = "bold white"
-format = ' [│](bright-black) [💨$duration]($style)'
+style = "bold yellow"
+format = ' [│](bright-black) [⌛$duration]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bold white"
-format = ' [│](bright-black) [🌒$time]($style)'
+format = ' [│](bright-black) [🔔$time]($style)'
