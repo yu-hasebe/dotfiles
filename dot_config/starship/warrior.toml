@@ -22,17 +22,17 @@ error_symbol = "💥"
 show_always = true
 style_user = "bold red"
 style_root = "bold yellow"
-format = ' [$user]($style)'
+format = '[$user]($style)'
 
 [sudo]
 disabled = false
-symbol = "👑 sudo"
+symbol = "👑sudo"
 style = "bold white"
 format = ' [│](bright-black) [$symbol]($style)'
 
 [direnv]
 disabled = false
-symbol = "🔱 env:"
+symbol = "🔱env:"
 style = "bold white"
 allowed_msg = "🦁"
 denied_msg = "🐉"
@@ -40,12 +40,12 @@ format = ' [│](bright-black) [$symbol$allowed]($style)'
 
 [directory]
 style = "bold red"
-format = ' [│](bright-black) [🏰 $path]($style)'
+format = ' [│](bright-black) [🏰$path]($style)'
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-symbol = "🚩 "
+symbol = "🚩"
 style = "bold yellow"
 format = ' [│](bright-black) [$symbol$branch]($style)'
 
@@ -57,7 +57,7 @@ ahead = "⇡"
 behind = "⇣"
 diverged = "⇕"
 untracked = "?"
-stashed = "$"
+stashed = "$$"
 modified = "!"
 staged = "+"
 renamed = "»"
@@ -102,10 +102,10 @@ format = ' [│](bright-black) [$symbol($version)]($style)'
 [cmd_duration]
 min_time = 2_000
 style = "bold white"
-format = ' [│](bright-black) [💪 $duration]($style)'
+format = ' [│](bright-black) [💪$duration]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bold white"
-format = ' [│](bright-black) [🌞 $time]($style)'
+format = ' [│](bright-black) [🌞$time]($style)'
