@@ -1,3 +1,4 @@
+# Haunt watches for agents waiting for input and sends Enter to unblock them.
 haunt() {
 	local _result _pane
 	trap 'printf "\n"; _msg 👻 haunt "stopped. 🌙"; return 0' INT TERM
