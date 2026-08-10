@@ -2,9 +2,9 @@
 
 format = """
 [╔](bright-black)$fill[╗](bright-black)
-[║](bright-black) $character$username$sudo$hostname$direnv$mise$directory$git_branch$git_commit$git_state$git_status$git_metrics$nodejs$rust$golang$php$python$lua$aws$gcloud$docker_context$container$netns$terraform$buf$jobs$battery$cmd_duration$time
+[║](bright-black) $status$username$sudo$hostname$direnv$mise$directory$git_branch$git_commit$git_state$git_status$git_metrics$nodejs$rust$golang$php$python$lua$aws$gcloud$docker_context$container$netns$terraform$buf$jobs$battery$cmd_duration$time
 [╚](bright-black)$fill[╝](bright-black)
-[▶](bold green) """
+$character """
 
 right_format = ""
 
@@ -15,8 +15,14 @@ style = "bright-black"
 [character]
 disabled = false
 format = '$symbol'
+success_symbol = "[▶](bold green)"
+error_symbol = "[▶](bold red)"
+
+[status]
+disabled = false
+symbol = "💥"
 success_symbol = "🪄"
-error_symbol = "💥"
+format = '$symbol'
 
 [username]
 show_always = true
