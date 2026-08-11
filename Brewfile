@@ -41,6 +41,8 @@ brew "starship"
 brew "stylua"
 # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager
 brew "tenv"
+# Language Server for Terraform
+brew "terraform-ls"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
