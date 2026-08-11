@@ -13,6 +13,4 @@ eval "$(starship init "$_shell")"
 eval "$(direnv hook "$_shell")"
 unset _shell
 
-export TENV_AUTO_INSTALL=true
-alias t='terraform'
 alias k='kubectl'
