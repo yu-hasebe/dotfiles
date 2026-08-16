@@ -1,6 +1,8 @@
 require("helpers.lazy")
 require("helpers.lsp")
 
+vim.o.statusline = "%{%v:lua.require('helpers.statusline').render()%}"
+
 vim.o.encoding = "utf-8"
 vim.o.number = true
 vim.o.relativenumber = true
