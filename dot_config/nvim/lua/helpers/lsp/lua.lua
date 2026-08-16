@@ -32,12 +32,19 @@ create_autocmd("FileType", {
 				},
 			},
 
-			-- FIXME: stylua does not work on save
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					callback = function()
-						vim.lsp.buf.format({ async = false })
+						local content = table.concat(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false), "\n")
+						local result = vim.fn.system({ "stylua", "--search-parent-directories", "-" }, content)
+						if vim.v.shell_error == 0 then
+							local lines = vim.split(result, "\n", { plain = true })
+							if lines[#lines] == "" then
+								table.remove(lines)
+							end
+							vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
+						end
 					end,
 				})
 			end,
