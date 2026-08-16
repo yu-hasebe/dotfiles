@@ -5,7 +5,8 @@ vim.o.statusline = "%{%v:lua.require('helpers.statusline').render()%}"
 
 vim.o.encoding = "utf-8"
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
+vim.o.signcolumn = "yes"
 
 -- Indent
 vim.o.expandtab = true
