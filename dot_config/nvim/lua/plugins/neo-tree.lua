@@ -10,6 +10,9 @@ return {
 			{ "<space>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file tree" },
 		},
 		opts = {
+			window = {
+				width = 30,
+			},
 			filesystem = {
 				follow_current_file = {
 					enabled = true,
