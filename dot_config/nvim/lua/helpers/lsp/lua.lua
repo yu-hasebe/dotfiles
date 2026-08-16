@@ -1,3 +1,5 @@
+local lsp_utils = require("helpers.lsp.utils")
+
 local augroup = vim.api.nvim_create_augroup("lua/helpers/lsp/lua.lua", {})
 
 local function create_autocmd(event, opts)
@@ -34,7 +36,7 @@ create_autocmd("FileType", {
 			},
 
 			on_attach = function(client, bufnr)
-				LspOnAttach(client, bufnr)
+				lsp_utils.on_attach(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					callback = function()
