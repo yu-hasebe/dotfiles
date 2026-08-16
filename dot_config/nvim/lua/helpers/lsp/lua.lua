@@ -26,6 +26,7 @@ create_autocmd("FileType", {
 						checkThirdParty = false,
 						library = vim.api.nvim_get_runtime_file("", true),
 					},
+					-- Disable the built-in formatter to use stylua instead
 					format = {
 						enable = false,
 					},
@@ -36,6 +37,7 @@ create_autocmd("FileType", {
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					callback = function()
+						-- Use stylua instead of the lua_ls built-in formatter
 						local content = table.concat(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false), "\n")
 						local result = vim.fn.system({ "stylua", "--search-parent-directories", "-" }, content)
 						if vim.v.shell_error == 0 then
