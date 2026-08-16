@@ -34,6 +34,7 @@ create_autocmd("FileType", {
 			},
 
 			on_attach = function(client, bufnr)
+				LspOnAttach(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					callback = function()

@@ -9,16 +9,6 @@ local function create_autocmd(event, opts)
 	)
 end
 
-local function lsp_keymaps(bufnr)
-	local opts = { buffer = bufnr, silent = true }
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-
-	vim.keymap.set("i", "<C-q>", "<C-x><C-o>", opts)
-end
-
 create_autocmd("FileType", {
 	pattern = { "terraform", "terraform-vars" },
 	callback = function()
@@ -27,7 +17,7 @@ create_autocmd("FileType", {
 			cmd = { "terraform-ls", "serve" },
 			root_dir = vim.fs.root(0, { ".terraform", ".git" }),
 			on_attach = function(client, bufnr)
-				lsp_keymaps(bufnr)
+				LspOnAttach(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
 					callback = function()

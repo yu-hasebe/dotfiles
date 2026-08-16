@@ -1,11 +1,5 @@
--- Disable netrw to prevent it from opening automatically on directory args
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 require("helpers.user_command")
-require("helpers.auto_command")
 require("helpers.lazy")
-require("helpers.mini")
 require("helpers.lsp")
 
 vim.o.encoding = "utf-8"
