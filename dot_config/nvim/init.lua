@@ -1,4 +1,3 @@
-require("helpers.user_command")
 require("helpers.lazy")
 require("helpers.lsp")
 
