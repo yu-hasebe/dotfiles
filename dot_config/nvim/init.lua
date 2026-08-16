@@ -4,6 +4,7 @@ require("helpers.lsp")
 vim.o.statusline = "%{%v:lua.require('helpers.statusline').render()%}"
 
 vim.o.encoding = "utf-8"
+vim.o.completeopt = "menu,menuone,noselect"
 vim.o.number = true
 vim.o.relativenumber = false
 vim.o.signcolumn = "yes"

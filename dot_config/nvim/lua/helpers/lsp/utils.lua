@@ -6,7 +6,9 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-	vim.keymap.set("i", "<C-q>", "<C-x><C-o>", opts)
+
+	-- Built-in LSP completion (Neovim 0.11+)
+	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
 end
 
 return M
