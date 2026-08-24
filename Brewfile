@@ -55,6 +55,7 @@ brew "volta"
 cask "bruno"
 # Terminal-based AI coding assistant
 cask "claude-code"
+cask "font-hack-nerd-font"
 cask "font-hackgen-nerd"
 # Web browser
 cask "google-chrome"
