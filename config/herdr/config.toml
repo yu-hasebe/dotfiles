@@ -1,0 +1,13 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+
+[theme.custom]
+accent = "#b55088"
+active_row_bg = "#b55088"
+surface_dim = "#FFFFFF"
+overlay0 = "#FFFFFF"
+text = "#FFFFFF"
+subtext0 = "#FFFFFF"
+panel_bg = "reset"
