@@ -15,6 +15,7 @@ $git_status\
 $golang\
 $nodejs\
 $terraform\
+$buf\
 $lua\
 $rust\
 [](bg:level5 fg:level4)\
@@ -25,7 +26,9 @@ $docker_context\
 $container\
 $kubernetes\
 $netns\
+$jobs\
 [](bg:level7 fg:level6)\
+$cmd_duration\
 $time\
 [](fg:level7)\
 \n$character"""
@@ -144,6 +147,10 @@ symbol = '󰊠'
 style = "bg:level6"
 format = '[[ $symbol($number) ](bg:level6 fg:white)]($style)'
 
+[cmd_duration]
+min_time = 2_000
+style = "bg:level7"
+format = '[[ 󱦟 $duration ](bg:level7 fg:white)]($style)'
 [time]
 disabled = false
 time_format = "%R"
