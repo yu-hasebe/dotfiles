@@ -35,15 +35,15 @@ $time\
 \n$character"""
 
 [palettes.custom]
-black       = "#000000"
-level1      = "#FF7E1D"
-level2      = "#EB5A00"
-level3      = "#D13E00"
-level4      = "#B32700"
-level5      = "#911800"
-level6      = "#6E0E05"
-level7      = "#4A080B"
-white       = "#FFFFFF"
+black   = "#181425"
+level1  = "#feae34"
+level2  = "#f77622"
+level3  = "#d77643"
+level4  = "#be4a2f"
+level5  = "#a22633"
+level6  = "#733e39"
+level7  = "#3e2731"
+white   = "#ffffff"
 
 [os]
 style = "bg:level1 fg:white"
@@ -162,3 +162,9 @@ disabled = false
 time_format = "%R"
 style = "bg:level7"
 format = '[[  $time ](bg:level7 fg:white)]($style)'
+
+[character]
+disabled = false
+format = '$symbol'
+success_symbol = "[󰧚 ](bold green)"
+error_symbol = "[󰧚 ](bold red)"
