@@ -14,6 +14,7 @@ main() {
 	link "$DOTFILES/config/wezterm" ~/.config/wezterm
 	link "$DOTFILES/config/herdr" ~/.config/herdr
 	link "$DOTFILES/config/starship.toml" ~/.config/starship.toml
+	link "$DOTFILES/config/mise" ~/.config/mise
 }
 
 main

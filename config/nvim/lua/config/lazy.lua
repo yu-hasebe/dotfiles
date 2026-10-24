@@ -31,8 +31,7 @@ require("lazy").setup({
 	    import = "nvchad.plugins",
     },
     { "mason-org/mason.nvim", enabled = false },
-    -- import your plugins
-    -- { import = "plugins" },
+    { import = "plugins" },
   },
 
   -- Configure any other settings here. See the documentation for more details.
