@@ -27,8 +27,8 @@ $container\
 $kubernetes\
 $netns\
 $jobs\
-[](bg:level7 fg:level6)\
 $cmd_duration\
+[](bg:level7 fg:level6)\
 $time\
 [](fg:level7)\
 \n$character"""
@@ -146,11 +146,11 @@ format = '[[ $symbol $name ](bg:level6 fg:white)]($style)'
 symbol = '󰊠'
 style = "bg:level6"
 format = '[[ $symbol($number) ](bg:level6 fg:white)]($style)'
-
 [cmd_duration]
 min_time = 2_000
-style = "bg:level7"
-format = '[[ 󱦟 $duration ](bg:level7 fg:white)]($style)'
+style = "bg:level6"
+format = '[[ 󱦟 $duration ](bg:level6 fg:white)]($style)'
+
 [time]
 disabled = false
 time_format = "%R"
