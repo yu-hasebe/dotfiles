@@ -5,8 +5,8 @@ return {
 	config = function()
 		local c = {
 			bg = "#181425",
-			white = "#FFFFFF",
 			fg = "#EAD4AA",
+			white = "#FFFFFF",
 		}
 
 		local function seg(bg, fg, bold)
@@ -24,14 +24,18 @@ return {
 
 		local theme = {
 			normal = base,
-			insert = { a = seg("#265C42", c.white, true) },
-			visual = { a = seg("#68386C", c.white, true) },
-			replace = { a = seg("#A22633", c.white, true) },
-			command = { a = seg("#3A4466", c.white, true) },
-			terminal = { a = seg("#193C3E", c.white, true) },
+			insert = vim.tbl_extend("force", base, { a = seg("#265C42", c.white, true) }),
+			visual = vim.tbl_extend("force", base, { a = seg("#68386C", c.white, true) }),
+			replace = vim.tbl_extend("force", base, { a = seg("#A22633", c.white, true) }),
+			command = vim.tbl_extend("force", base, { a = seg("#3A4466", c.white, true) }),
+			terminal = vim.tbl_extend("force", base, { a = seg("#193C3E", c.white, true) }),
 			inactive = {
+				a = seg(c.bg, c.fg),
+				b = seg(c.bg, c.fg),
 				c = seg(c.bg, c.fg),
 				x = seg(c.bg, c.fg),
+				y = seg(c.bg, c.fg),
+				z = seg(c.bg, c.fg),
 			},
 		}
 
