@@ -12,16 +12,19 @@ $directory\
 $git_branch\
 $git_status\
 [](bg:level4 fg:level3)\
-$nodejs\
-$rust\
 $golang\
+$nodejs\
 $terraform\
+$lua\
+$rust\
 [](bg:level5 fg:level4)\
 $aws\
 $gcloud\
+[](bg:level6 fg:level5)\
 $docker_context\
 $container\
-[](bg:level6 fg:level5)\
+$kubernetes\
+$netns\
 [](bg:level7 fg:level6)\
 $time\
 [](fg:level7)\
@@ -98,6 +101,14 @@ format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
 symbol = "󱁢"
 style = "bg:level4"
 format = '[[ $symbol $workspace ](bg:level4 fg:white)]($style)'
+[buf]
+symbol = ""
+style = "bg:level4"
+format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
+[lua]
+symbol = ""
+style = "bg:level4"
+format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
 [rust]
 symbol = ""
 style = "bg:level4"
@@ -111,18 +122,27 @@ format = '[[ $symbol $profile(\($region\)) ](bg:level5 fg:white)]($style)'
 symbol = "󱇶"
 style = "bg:level5"
 format = '[[ $symbol $project ](bg:level5 fg:white)]($style)'
+
 [docker_context]
 symbol = "󰡨"
-style = "bg:level5"
-format = '[[ $symbol $context ](bg:level5 fg:white)]($style)'
+style = "bg:level6"
+format = '[[ $symbol $context ](bg:level6 fg:white)]($style)'
 [container]
 symbol = "󱣘"
-style = "bg:level5"
-format = '[[ $symbol $name ](bg:level5 fg:white)]($style)'
+style = "bg:level6"
+format = '[[ $symbol $name ](bg:level6 fg:white)]($style)'
 [kubernetes]
 symbol = "󱃾"
-style = "bg:level5"
-format = '[[ $symbol($context)(\($namespace\)) ](bg:level5 fg:white)]($style)'
+style = "bg:level6"
+format = '[[ $symbol($context)(\($namespace\)) ](bg:level6 fg:white)]($style)'
+[netns]
+symbol = ''
+style = "bg:level6"
+format = '[[ $symbol $name ](bg:level6 fg:white)]($style)'
+[jobs]
+symbol = '󰊠'
+style = "bg:level6"
+format = '[[ $symbol($number) ](bg:level6 fg:white)]($style)'
 
 [time]
 disabled = false
