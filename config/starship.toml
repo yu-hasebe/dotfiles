@@ -44,6 +44,8 @@ level5  = "#A22633"
 level6  = "#733E39"
 level7  = "#3E2731"
 white   = "#FFFFFF"
+red   = "#FF0044"
+green = "#63C74D"
 
 [os]
 style = "bg:level1 fg:white"
