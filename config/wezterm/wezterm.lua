@@ -3,7 +3,6 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font_with_fallback({
 	{ family = "HackGen35 Console NF", style = "Italic" },
-	{ family = "Hack Nerd Font Mono" },
 })
 
 config.font_size = 14
