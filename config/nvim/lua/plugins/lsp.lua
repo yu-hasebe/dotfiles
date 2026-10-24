@@ -6,5 +6,6 @@ return {
 			virtual_text = true,
 		})
 		vim.lsp.enable("lua_ls")
+		vim.lsp.enable("gopls")
 	end,
 }
