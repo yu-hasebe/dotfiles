@@ -4,10 +4,10 @@ onboarding = false
 name = "terminal"
 
 [theme.custom]
-accent = "#B55088"
-active_row_bg = "#B55088"
-surface_dim = "#FFFFFF"
-overlay0 = "#FFFFFF"
-text = "#FFFFFF"
-subtext0 = "#FFFFFF"
+accent = "#FEAE34"
+active_row_bg = "#FEAE34"
+surface_dim = "white"
+overlay0 = "white"
+text = "white"
+subtext0 = "white"
 panel_bg = "reset"
