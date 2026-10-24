@@ -11,29 +11,29 @@ config.font_size = 14
 config.color_schemes = {
 	["ENDESGA32"] = {
 		background = "#181425",
-		foreground = "#ead4aa",
+		foreground = "#EAD4AA",
 
-		cursor_bg = "#feae34",
+		cursor_bg = "#FEAE34",
 
 		ansi = {
-			"#262b44", -- black
-			"#a22633", -- red
-			"#265c42", -- green
-			"#feae34", -- yellow
-			"#124e89", -- blue
-			"#6b3fa0", -- magenta
-			"#193c3e", -- cyan
-			"#c0cbdc", -- white
+			"#262B44", -- black
+			"#A22633", -- red
+			"#265C42", -- green
+			"#FEAE34", -- yellow
+			"#124E89", -- blue
+			"#6B3FA0", -- magenta
+			"#193C3E", -- cyan
+			"#C0CBDC", -- white
 		},
 		brights = {
-			"#5a6988", -- bright black
-			"#e43b44", -- bright red
-			"#63c74d", -- bright green
-			"#fee761", -- bright yellow
-			"#0099db", -- bright blue
-			"#b55088", -- bright magenta
-			"#2ce8f5", -- bright cyan
-			"#ffffff", -- bright white
+			"#5A6988", -- bright black
+			"#E43B44", -- bright red
+			"#63C74D", -- bright green
+			"#FEE761", -- bright yellow
+			"#0099DB", -- bright blue
+			"#B55088", -- bright magenta
+			"#2CE8F5", -- bright cyan
+			"#FFFFFF", -- bright white
 		},
 	},
 }

@@ -36,14 +36,14 @@ $time\
 
 [palettes.custom]
 black   = "#181425"
-level1  = "#feae34"
-level2  = "#f77622"
-level3  = "#d77643"
-level4  = "#be4a2f"
-level5  = "#a22633"
-level6  = "#733e39"
-level7  = "#3e2731"
-white   = "#ffffff"
+level1  = "#FEAE34"
+level2  = "#F77622"
+level3  = "#D77643"
+level4  = "#BE4A2F"
+level5  = "#A22633"
+level6  = "#733E39"
+level7  = "#3E2731"
+white   = "#FFFFFF"
 
 [os]
 style = "bg:level1 fg:white"
