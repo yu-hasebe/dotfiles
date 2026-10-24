@@ -3,76 +3,129 @@
 palette = "custom"
 
 format = """
-[ ](bg:lavender fg:black)\
+[](bg:level1 fg:black)\
+$os\
 $username\
-[](bg:blue fg:lavender)\
+[](bg:level2 fg:level1)\
 $directory\
-[](fg:blue bg:dark_blue)\
+[](bg:level3 fg:level2)\
 $git_branch\
 $git_status\
-[](fg:dark_blue bg:darker_blue)\
+[](bg:level4 fg:level3)\
 $nodejs\
 $rust\
 $golang\
-$php\
-[](fg:darker_blue bg:darkest_blue)\
+$terraform\
+[](bg:level5 fg:level4)\
+$aws\
+$gcloud\
+$docker_context\
+$container\
+[](bg:level6 fg:level5)\
+[](bg:level7 fg:level6)\
 $time\
-[ ](fg:darkest_blue)\
+[](fg:level7)\
 \n$character"""
 
 [palettes.custom]
-black       = "#090c0c"
-lavender    = "#a3aed2"
-blue        = "#769ff0"
-dark_blue   = "#394260"
-darker_blue = "#212736"
-darkest_blue = "#1d2230"
-white       = "#e3e5e5"
-purple      = "#9A348E"
-muted_blue  = "#a0a9cb"
+black       = "#000000"
+level1      = "#FF7E1D"
+level2      = "#EB5A00"
+level3      = "#D13E00"
+level4      = "#B32700"
+level5      = "#911800"
+level6      = "#6E0E05"
+level7      = "#4A080B"
+white       = "#FFFFFF"
 
+[os]
+style = "bg:level1 fg:white"
+format = "[ $symbol ]($style)"
+disabled = false
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
 [username]
 show_always = true
-style_user = "bg:lavender"
-style_root = "bg:lavender"
+style_user = "bg:level1 fg:white"
+style_root = "bg:level1 fg:white"
 format = '[$user ]($style)'
 disabled = false
 
-[os]
-style = "bg:purple"
-
 [directory]
-style = "fg:white bg:blue"
-format = "[ $path ]($style)"
+style = "bg:level2 fg:white"
+format = "[  $path ]($style)"
 truncation_length = 3
-truncation_symbol = "\u2026/"
+truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:dark_blue"
-format = '[[ $symbol $branch ](fg:blue bg:dark_blue)]($style)'
-
+style = "bg:level3"
+format = '[[ $symbol $branch ](bg:level3 fg:white)]($style)'
 [git_status]
-style = "bg:dark_blue"
-format = '[[($all_status$ahead_behind )](fg:blue bg:dark_blue)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:darker_blue"
-format = '[[ $symbol ($version) ](fg:blue bg:darker_blue)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:darker_blue"
-format = '[[ $symbol ($version) ](fg:blue bg:darker_blue)]($style)'
+style = "bg:level3"
+format = '[[($all_status$ahead_behind )](bg:level3 fg:white)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:darker_blue"
-format = '[[ $symbol ($version) ](fg:blue bg:darker_blue)]($style)'
+style = "bg:level4"
+format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
+[nodejs]
+symbol = ""
+style = "bg:level4"
+format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
+[terraform]
+symbol = "󱁢"
+style = "bg:level4"
+format = '[[ $symbol $workspace ](bg:level4 fg:white)]($style)'
+[rust]
+symbol = ""
+style = "bg:level4"
+format = '[[ $symbol($version) ](bg:level4 fg:white)]($style)'
+
+[aws]
+symbol = "󰸏"
+style = "bg:level5"
+format = '[[ $symbol $profile(\($region\)) ](bg:level5 fg:white)]($style)'
+[gcloud]
+symbol = "󱇶"
+style = "bg:level5"
+format = '[[ $symbol $project ](bg:level5 fg:white)]($style)'
+[docker_context]
+symbol = "󰡨"
+style = "bg:level5"
+format = '[[ $symbol $context ](bg:level5 fg:white)]($style)'
+[container]
+symbol = "󱣘"
+style = "bg:level5"
+format = '[[ $symbol $name ](bg:level5 fg:white)]($style)'
+[kubernetes]
+symbol = "󱃾"
+style = "bg:level5"
+format = '[[ $symbol($context)(\($namespace\)) ](bg:level5 fg:white)]($style)'
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:darkest_blue"
-format = '[[  $time ](fg:muted_blue bg:darkest_blue)]($style)'
+time_format = "%R"
+style = "bg:level7"
+format = '[[  $time ](bg:level7 fg:white)]($style)'
