@@ -93,7 +93,7 @@ format = '[[ $symbol $branch ](bg:level3 fg:white)]($style)'
 disabled = false
 added_style = "bg:level3 fg:green"
 deleted_style = "bg:level3 fg:red"
-format = '[ [+$added]($added_style)/[-$deleted]($deleted_style) ](bg:level3 fg:white)'
+format = '[[+$added]($added_style)/[-$deleted]($deleted_style) ](bg:level3 fg:white)'
 [git_status]
 style = "bg:level3"
 format = '[[($all_status$ahead_behind )](bg:level3 fg:white)]($style)'
