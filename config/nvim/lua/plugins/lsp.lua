@@ -2,6 +2,9 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		vim.diagnostic.config({
+			virtual_text = true,
+		})
 		vim.lsp.enable("lua_ls")
 	end,
 }
