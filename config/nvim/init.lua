@@ -7,6 +7,7 @@ vim.env.PATH = vim.fn.expand("~/.local/share/mise/shims") .. ":" .. vim.env.PATH
 require("config.lazy")
 
 dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 require("nvchad.options")
 require("nvchad.autocmds")
 vim.schedule(function()
