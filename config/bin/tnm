@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source ~/.config/shell/_common.sh
+
+_dir="$1"
+if [[ -z "$_dir" ]]; then
+  error tnm "usage: tnm <directory>"
+  exit 1
+fi
+
+mkdir -p "$_dir"
+touch "$_dir/main.tf" "$_dir/variables.tf" "$_dir/outputs.tf"
+info tnm "created $_dir/{main.tf,variables.tf,outputs.tf}"
