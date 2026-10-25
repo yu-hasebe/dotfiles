@@ -17,7 +17,7 @@ return {
 				local pr_num = opts.args
 				local gh_cmd = "gh pr view"
 					.. (pr_num ~= "" and (" " .. pr_num) or "")
-					.. " --json baseRefName,headRefName --jq '\"origin/\" + .baseRefName + \"...origin/\" + .headRefName'"
+					.. ' --json baseRefName,headRefName --jq \'"origin/" + .baseRefName + "...origin/" + .headRefName\''
 				local range = vim.fn.trim(vim.fn.system(gh_cmd))
 				if vim.v.shell_error ~= 0 then
 					vim.notify("gdp: " .. range, vim.log.levels.ERROR)
