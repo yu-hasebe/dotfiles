@@ -16,6 +16,8 @@ main() {
 	link "$DOTFILES/config/herdr" ~/.config/herdr
 	link "$DOTFILES/config/nvim" ~/.config/nvim
 	link "$DOTFILES/config/mise" ~/.config/mise
+	link "$DOTFILES/config/bin" ~/.config/bin
+	link "$DOTFILES/config/init.sh" ~/.config/init.sh
 }
 
 main
