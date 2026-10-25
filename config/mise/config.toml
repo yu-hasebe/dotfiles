@@ -1,6 +1,7 @@
 [bootstrap.packages]
 "brew:starship"      = "latest"
 "brew:neovim"        = "latest"
+"brew:lazygit"       = "latest"
 "brew-cask:wezterm"  = "latest"
 
 [dotfiles]
@@ -15,13 +16,21 @@
 "~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
 
 [tools]
+# lua
 lua-language-server = "latest"
 stylua = "latest"
+
+# go
 "go:golang.org/x/tools/gopls" = "latest"
 gofumpt = "latest"
-lazygit = "latest"
+
+# rust
 rust = "latest"
+
+# shell
 "npm:bash-language-server" = "latest"
+shfmt = "latest"
+
+# typescript
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
-shfmt = "latest"
