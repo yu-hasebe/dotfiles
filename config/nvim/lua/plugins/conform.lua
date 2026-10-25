@@ -10,6 +10,9 @@ return {
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
+			json = { "prettier" },
+			toml = { "taplo" },
+			yaml = { "prettier" },
 		},
 		format_on_save = {
 			timeout_ms = 2000,
