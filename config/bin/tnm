@@ -5,16 +5,16 @@ set -euo pipefail
 source ~/.config/shell/_common.sh
 
 main() {
-  local _name="tnm"
+  local _name="tnm" _icon="🦋"
   local _dir="${1}"
   if [[ -z "${_dir}" ]]; then
-    error "${_name}" "usage: tnm <directory>"
+    error "${_icon}" "${_name}" "usage: tnm <directory>"
     exit 1
   fi
 
   mkdir -p "${_dir}"
   touch "${_dir}/main.tf" "${_dir}/variables.tf" "${_dir}/outputs.tf"
-  info "${_name}" "created ${_dir}/{main.tf,variables.tf,outputs.tf}"
+  info "${_icon}" "${_name}" "created ${_dir}/{main.tf,variables.tf,outputs.tf}"
 }
 
 main "$@"

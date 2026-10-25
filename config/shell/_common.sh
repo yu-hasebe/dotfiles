@@ -4,16 +4,16 @@ msg() {
 }
 
 info() {
-  local _name="$1" _text="$2"
-  msg $'\033[34m' "🐬" "${_name}" "${_text}"
+  local _icon="${1:-🐬}" _name="$2" _text="$3"
+  msg $'\033[34m' "${_icon}" "${_name}" "${_text}"
 }
 
 warn() {
-  local _name="$1" _text="$2"
-  msg $'\033[33m' "🐡" "${_name}" "${_text}"
+  local _icon="${1:-🐡}" _name="$2" _text="$3"
+  msg $'\033[33m' "${_icon}" "${_name}" "${_text}"
 }
 
 error() {
-  local _name="$1" _text="$2"
-  msg $'\033[31m' "🐙" "${_name}" "${_text}"
+  local _icon="${1:-🐙}" _name="$2" _text="$3"
+  msg $'\033[31m' "${_icon}" "${_name}" "${_text}"
 }

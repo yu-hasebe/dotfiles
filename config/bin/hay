@@ -5,11 +5,11 @@ set -euo pipefail
 source ~/.config/shell/_common.sh
 
 main() {
-  local _name="hay"
+  local _name="hay" _icon="🦑"
   local _result _pane
-  trap 'printf "\n"; info "${_name}" "stopped."; return 0' INT TERM
+  trap 'printf "\n"; info "${_icon}" "${_name}" "stopped."; return 0' INT TERM
 
-  info "${_name}" "watching for agents waiting for input (Ctrl+C to stop)..."
+  info "${_icon}" "${_name}" "watching for agents waiting for input (Ctrl+C to stop)..."
 
   while true; do
     _result=$(herdr agent list 2>/dev/null) || {
