@@ -17,4 +17,4 @@ main() {
   info "${_name}" "created ${_dir}/{main.tf,variables.tf,outputs.tf}"
 }
 
-main "${@}"
+main "$@"
