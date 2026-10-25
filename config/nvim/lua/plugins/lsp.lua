@@ -23,5 +23,8 @@ return {
 
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("gopls")
+		vim.lsp.enable("bashls")
+		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("rust_analyzer")
 	end,
 }
