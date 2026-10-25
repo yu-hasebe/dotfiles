@@ -1,24 +1,5 @@
 return {
 	{
-		"lewis6991/gitsigns.nvim",
-		opts = {
-			on_attach = function(bufnr)
-				local gs = package.loaded.gitsigns
-				local map = function(mode, lhs, rhs)
-					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr })
-				end
-
-				map("n", "]c", gs.next_hunk)
-				map("n", "[c", gs.prev_hunk)
-				map("n", "<leader>hs", gs.stage_hunk)
-				map("n", "<leader>hr", gs.reset_hunk)
-				map("n", "<leader>hp", gs.preview_hunk)
-				map("n", "<leader>gb", gs.blame_line)
-			end,
-		},
-	},
-
-	{
 		"sindrets/diffview.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
