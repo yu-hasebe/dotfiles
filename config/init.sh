@@ -7,5 +7,5 @@ for f in ~/.config/shell/*.sh; do
   source "$f"
 done
 
-eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
+eval "$(starship init "$(basename "$SHELL")")"
+eval "$(mise activate "$(basename "$SHELL")")"

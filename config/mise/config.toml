@@ -17,6 +17,7 @@
 "~/.config/nvim"         = "~/src/github.com/yu-hasebe/dotfiles/config/nvim"
 "~/.config/mise"         = "~/src/github.com/yu-hasebe/dotfiles/config/mise"
 "~/.config/bin"          = "~/src/github.com/yu-hasebe/dotfiles/config/bin"
+# For other shells, add a corresponding block (e.g. "~/.bashrc/init" or "~/.config/fish/config.fish/init")
 "~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
 
 [tools]
