@@ -3,6 +3,7 @@
 "brew:neovim" = "latest"
 "brew:lazygit" = "latest"
 "brew:jq" = "latest"
+"brew:ripgrep" = "latest"
 "brew:awscli" = "latest"
 "brew-cask:wezterm" = "latest"
 
