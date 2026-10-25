@@ -10,6 +10,7 @@ return {
 	},
 
 	base46 = {
+		theme = "onedark",
 		transparency = true,
 	},
 }
