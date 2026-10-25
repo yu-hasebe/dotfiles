@@ -7,9 +7,6 @@ return {
 		statusline = {
 			theme = "vscode_colored",
 		},
-		tabufline = {
-			order = { "treeOffset", "buffers", "tabs" },
-		},
 	},
 
 	base46 = {
