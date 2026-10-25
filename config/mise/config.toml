@@ -2,6 +2,10 @@
 "brew:starship"      = "latest"
 "brew:neovim"        = "latest"
 "brew:lazygit"       = "latest"
+"brew:jq"            = "latest"
+"brew:awscli"        = "latest"
+"brew:terraform"     = "latest"
+"brew:tftui"         = "latest"
 "brew-cask:wezterm"  = "latest"
 
 [dotfiles]
@@ -34,3 +38,6 @@ shfmt = "latest"
 # typescript
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
+
+# general
+herdr = "latest"
