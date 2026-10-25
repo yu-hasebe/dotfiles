@@ -13,6 +13,6 @@ return {
 	},
 
 	base46 = {
-		theme = "kanagawa-dragon",
+		theme = "aylin",
 	},
 }
