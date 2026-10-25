@@ -3,9 +3,8 @@
 "brew:neovim"        = "latest"
 "brew:lazygit"       = "latest"
 "brew:jq"            = "latest"
-"brew:awscli"        = "latest"
-"brew:terraform"     = "latest"
-"brew:tftui"         = "latest"
+"brew:awscli"                    = "latest"
+"brew:idoavrah/homebrew/tftui"   = "latest"
 "brew-cask:wezterm"  = "latest"
 
 [dotfiles]
@@ -39,6 +38,9 @@ shfmt = "latest"
 # typescript
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
+
+# terraform
+terraform = "latest"
 
 # general
 herdr = "latest"
