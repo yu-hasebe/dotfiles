@@ -1,5 +1,9 @@
 onboarding = false
 
+[keys]
+open_worktree = "prefix+o"
+remove_worktree = "prefix+shift+r"
+
 [theme]
 name = "terminal"
 
