@@ -10,6 +10,12 @@ Personal dotfiles for macOS.
 
 Creates symlinks from `~/.config/` to `config/` in this repo.
 
+Then add the following to `~/.zshrc`:
+
+```sh
+source ~/.config/init.sh
+```
+
 ## Contents
 
 | Path | Description |
