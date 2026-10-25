@@ -6,26 +6,25 @@ source ~/.config/shell/_common.sh
 
 _is_yes_no_question() {
 	local _pane_id="$1"
-	local _content _options _count _has_yes _has_no
+	local _content _options _has_yes _has_no
 
 	_content=$(herdr pane read --source visible "${_pane_id}" 2>/dev/null) || return 1
 
-	# Require a CLI picker menu (❯ marks the selected item)
-	printf '%s' "${_content}" | grep -qE '^\s*❯\s+\S' || return 1
+	# Require a numbered CLI picker menu (❯ N. marks the selected item)
+	printf '%s' "${_content}" | grep -qE '^\s*❯\s+[0-9]+\.\s+\S' || return 1
 
-	# Extract option labels: lines starting with ❯ or 2+ spaces followed by a letter
+	# Extract option labels: strip picker prefix and number prefix
 	_options=$(printf '%s' "${_content}" |
-		grep -E '^\s*(❯\s+|\s{2,})[A-Za-z]' |
+		grep -E '^\s*(❯\s+|\s{2,})[0-9]+\.\s+[A-Za-z]' |
 		sed 's/^\s*❯\s*//' |
 		sed 's/^\s\{2,\}//' |
+		sed 's/^[0-9]\+\.\s*//' |
 		grep -vE '^$')
 
-	_count=$(printf '%s' "${_options}" | grep -c '.' 2>/dev/null || true)
 	_has_yes=$(printf '%s' "${_options}" | grep -ciE '^yes$' 2>/dev/null || true)
 	_has_no=$(printf '%s' "${_options}" | grep -ciE '^no$' 2>/dev/null || true)
 
-	[[ "${_count}" -ge 2 ]] && [[ "${_count}" -le 3 ]] &&
-		[[ "${_has_yes}" -ge 1 ]] && [[ "${_has_no}" -ge 1 ]]
+	[[ "${_has_yes}" -ge 1 ]] && [[ "${_has_no}" -ge 1 ]]
 }
 
 main() {
