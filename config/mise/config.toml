@@ -20,27 +20,22 @@
 "~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
 
 [tools]
-# lua
 lua-language-server = "latest"
 stylua = "latest"
 
-# go
 "go:golang.org/x/tools/gopls" = "latest"
 gofumpt = "latest"
 
-# rust
 rust = "latest"
 
-# shell
 "npm:bash-language-server" = "latest"
 shfmt = "latest"
 
-# typescript
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
 
-# terraform
+taplo = "latest"
+
 terraform = "latest"
 
-# general
 herdr = "latest"
