@@ -3,9 +3,8 @@
 "brew:neovim"        = "latest"
 "brew:lazygit"       = "latest"
 "brew:jq"            = "latest"
-"brew:awscli"        = "latest"
-"brew:terraform"     = "latest"
-"brew:tftui"         = "latest"
+"brew:awscli"                    = "latest"
+"brew:idoavrah/homebrew/tftui"   = "latest"
 "brew-cask:wezterm"  = "latest"
 
 [dotfiles]
@@ -21,27 +20,22 @@
 "~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
 
 [tools]
-# lua
 lua-language-server = "latest"
 stylua = "latest"
 
-# go
 "go:golang.org/x/tools/gopls" = "latest"
 gofumpt = "latest"
 
-# rust
 rust = "latest"
 
-# shell
 "npm:bash-language-server" = "latest"
 shfmt = "latest"
 
-# typescript
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
 
-# toml
 taplo = "latest"
 
-# general
+terraform = "latest"
+
 herdr = "latest"
