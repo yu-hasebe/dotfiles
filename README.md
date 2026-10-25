@@ -4,6 +4,7 @@ Personal dotfiles for macOS.
 
 ## Prerequisites
 
+- [git](https://git-scm.com/)
 - [mise](https://mise.jdx.dev/)
 
 ## Setup
