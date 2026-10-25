@@ -20,9 +20,9 @@ _is_yes_no_question() {
 		sed 's/^\s\{2,\}//' |
 		grep -vE '^$')
 
-	_count=$(printf '%s' "${_options}" | grep -c '.' 2>/dev/null || echo 0)
-	_has_yes=$(printf '%s' "${_options}" | grep -ciE '^yes$' 2>/dev/null || echo 0)
-	_has_no=$(printf '%s' "${_options}" | grep -ciE '^no$' 2>/dev/null || echo 0)
+	_count=$(printf '%s' "${_options}" | grep -c '.' 2>/dev/null || true)
+	_has_yes=$(printf '%s' "${_options}" | grep -ciE '^yes$' 2>/dev/null || true)
+	_has_no=$(printf '%s' "${_options}" | grep -ciE '^no$' 2>/dev/null || true)
 
 	[[ "${_count}" -ge 2 ]] && [[ "${_count}" -le 3 ]] &&
 		[[ "${_has_yes}" -ge 1 ]] && [[ "${_has_no}" -ge 1 ]]
