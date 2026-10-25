@@ -6,3 +6,6 @@ for f in ~/.config/shell/*.sh; do
   [[ "$f" == */_common.sh ]] && continue
   source "$f"
 done
+
+eval "$(starship init zsh)"
+eval "$(mise activate zsh)"

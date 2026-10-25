@@ -10,6 +10,7 @@ link() {
 }
 
 main() {
+	link "$DOTFILES/config/init.sh" ~/.config/init.sh
 	link "$DOTFILES/config/shell" ~/.config/shell
 	link "$DOTFILES/config/wezterm" ~/.config/wezterm
 	link "$DOTFILES/config/starship.toml" ~/.config/starship.toml
@@ -17,7 +18,6 @@ main() {
 	link "$DOTFILES/config/nvim" ~/.config/nvim
 	link "$DOTFILES/config/mise" ~/.config/mise
 	link "$DOTFILES/config/bin" ~/.config/bin
-	link "$DOTFILES/config/init.sh" ~/.config/init.sh
 }
 
 main
