@@ -8,6 +8,24 @@ return {
 			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
 			{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
 		},
+		init = function()
+			vim.cmd("cnoreabbrev gd DiffviewOpen")
+			vim.cmd("cnoreabbrev gD DiffviewClose")
+			vim.cmd("cnoreabbrev gdp Gdp")
+
+			vim.api.nvim_create_user_command("Gdp", function(opts)
+				local pr_num = opts.args
+				local gh_cmd = "gh pr view"
+					.. (pr_num ~= "" and (" " .. pr_num) or "")
+					.. " --json baseRefName,headRefName --jq '\"origin/\" + .baseRefName + \"...origin/\" + .headRefName'"
+				local range = vim.fn.trim(vim.fn.system(gh_cmd))
+				if vim.v.shell_error ~= 0 then
+					vim.notify("gdp: " .. range, vim.log.levels.ERROR)
+					return
+				end
+				vim.cmd("DiffviewOpen " .. range)
+			end, { nargs = "?" })
+		end,
 	},
 
 	{
