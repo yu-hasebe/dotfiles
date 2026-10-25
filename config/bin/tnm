@@ -5,7 +5,7 @@ set -euo pipefail
 source ~/.config/shell/_common.sh
 
 main() {
-  local _name="tnm" _icon="🦋"
+  local _name="tnm" _icon="🪷"
   local _dir="${1}"
   if [[ -z "${_dir}" ]]; then
     error "${_icon}" "${_name}" "usage: tnm <directory>"

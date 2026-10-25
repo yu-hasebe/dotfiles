@@ -5,7 +5,7 @@ set -euo pipefail
 source ~/.config/shell/_common.sh
 
 main() {
-  local _name="hay" _icon="🦑"
+  local _name="hay" _icon="👻"
   local _result _pane
   trap 'printf "\n"; info "${_icon}" "${_name}" "stopped."; return 0' INT TERM
 

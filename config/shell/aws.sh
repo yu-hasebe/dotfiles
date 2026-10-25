@@ -1,6 +1,6 @@
 # AWS Profile Switcher
 awsp() {
-  local _name="awsp" _icon="🦉"
+  local _name="awsp" _icon="🐬"
   local profiles=($(aws configure list-profiles 2>/dev/null))
   if [ ${#profiles[@]} -eq 0 ]; then
     error "${_icon}" "${_name}" "No AWS profiles found."
@@ -8,7 +8,7 @@ awsp() {
   fi
 
   info "${_icon}" "${_name}" "Select AWS Profile:"
-  PS3="Enter number: "
+  PS3="$(info "${_icon}" "${_name}" "Enter number: ")"
   select p in "${profiles[@]}"; do
     if [ -n "$p" ]; then
       export AWS_PROFILE="$p"
