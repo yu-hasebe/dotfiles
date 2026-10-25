@@ -4,12 +4,17 @@ set -euo pipefail
 
 source ~/.config/shell/_common.sh
 
-_dir="$1"
-if [[ -z "$_dir" ]]; then
-  error tnm "usage: tnm <directory>"
-  exit 1
-fi
+main() {
+  local _name="tnm"
+  local _dir="${1}"
+  if [[ -z "${_dir}" ]]; then
+    error "${_name}" "usage: tnm <directory>"
+    exit 1
+  fi
 
-mkdir -p "$_dir"
-touch "$_dir/main.tf" "$_dir/variables.tf" "$_dir/outputs.tf"
-info tnm "created $_dir/{main.tf,variables.tf,outputs.tf}"
+  mkdir -p "${_dir}"
+  touch "${_dir}/main.tf" "${_dir}/variables.tf" "${_dir}/outputs.tf"
+  info "${_name}" "created ${_dir}/{main.tf,variables.tf,outputs.tf}"
+}
+
+main "$@"
