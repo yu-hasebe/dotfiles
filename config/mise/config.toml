@@ -40,5 +40,8 @@ shfmt = "latest"
 "npm:typescript-language-server" = "latest"
 "npm:prettier" = "latest"
 
+# toml
+taplo = "latest"
+
 # general
 herdr = "latest"
