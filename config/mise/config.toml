@@ -1,23 +1,22 @@
 [bootstrap.packages]
-"brew:starship"      = "latest"
-"brew:neovim"        = "latest"
-"brew:lazygit"       = "latest"
-"brew:jq"            = "latest"
-"brew:awscli"                    = "latest"
-"brew:idoavrah/homebrew/tftui"   = "latest"
-"brew-cask:wezterm"  = "latest"
+"brew:starship" = "latest"
+"brew:neovim" = "latest"
+"brew:lazygit" = "latest"
+"brew:jq" = "latest"
+"brew:awscli" = "latest"
+"brew-cask:wezterm" = "latest"
 
 [dotfiles]
-"~/.config/init.sh"      = "~/src/github.com/yu-hasebe/dotfiles/config/init.sh"
-"~/.config/shell"        = "~/src/github.com/yu-hasebe/dotfiles/config/shell"
-"~/.config/wezterm"      = "~/src/github.com/yu-hasebe/dotfiles/config/wezterm"
+"~/.config/init.sh" = "~/src/github.com/yu-hasebe/dotfiles/config/init.sh"
+"~/.config/shell" = "~/src/github.com/yu-hasebe/dotfiles/config/shell"
+"~/.config/wezterm" = "~/src/github.com/yu-hasebe/dotfiles/config/wezterm"
 "~/.config/starship.toml" = "~/src/github.com/yu-hasebe/dotfiles/config/starship.toml"
-"~/.config/herdr"        = "~/src/github.com/yu-hasebe/dotfiles/config/herdr"
-"~/.config/nvim"         = "~/src/github.com/yu-hasebe/dotfiles/config/nvim"
-"~/.config/mise"         = "~/src/github.com/yu-hasebe/dotfiles/config/mise"
-"~/.config/bin"          = "~/src/github.com/yu-hasebe/dotfiles/config/bin"
+"~/.config/herdr" = "~/src/github.com/yu-hasebe/dotfiles/config/herdr"
+"~/.config/nvim" = "~/src/github.com/yu-hasebe/dotfiles/config/nvim"
+"~/.config/mise" = "~/src/github.com/yu-hasebe/dotfiles/config/mise"
+"~/.config/bin" = "~/src/github.com/yu-hasebe/dotfiles/config/bin"
 # For other shells, add a corresponding block (e.g. "~/.bashrc/init" or "~/.config/fish/config.fish/init")
-"~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
+"~/.zshrc/init" = { block = "source ~/.config/init.sh" }
 
 [tools]
 lua-language-server = "latest"
@@ -39,5 +38,7 @@ shfmt = "latest"
 taplo = "latest"
 
 terraform = "latest"
+uv = "latest"
+"pipx:tftui" = "latest"
 
 herdr = "latest"
