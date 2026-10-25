@@ -2,19 +2,17 @@
 
 Personal dotfiles for macOS.
 
+## Prerequisites
+
+- [mise](https://mise.jdx.dev/)
+
 ## Setup
 
 ```sh
-./install.sh
+mise bootstrap
 ```
 
-Creates symlinks from `~/.config/` to `config/` in this repo.
-
-Then add the following to `~/.zshrc`:
-
-```sh
-source ~/.config/init.sh
-```
+Installs dependencies, creates symlinks under `~/.config/`, and injects `source ~/.config/init.sh` into `~/.zshrc`.
 
 ## Contents
 

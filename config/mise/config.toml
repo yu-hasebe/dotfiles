@@ -1,3 +1,19 @@
+[bootstrap.packages]
+"brew:starship"      = "latest"
+"brew:neovim"        = "latest"
+"brew-cask:wezterm"  = "latest"
+
+[dotfiles]
+"~/.config/init.sh"      = "~/src/github.com/yu-hasebe/dotfiles/config/init.sh"
+"~/.config/shell"        = "~/src/github.com/yu-hasebe/dotfiles/config/shell"
+"~/.config/wezterm"      = "~/src/github.com/yu-hasebe/dotfiles/config/wezterm"
+"~/.config/starship.toml" = "~/src/github.com/yu-hasebe/dotfiles/config/starship.toml"
+"~/.config/herdr"        = "~/src/github.com/yu-hasebe/dotfiles/config/herdr"
+"~/.config/nvim"         = "~/src/github.com/yu-hasebe/dotfiles/config/nvim"
+"~/.config/mise"         = "~/src/github.com/yu-hasebe/dotfiles/config/mise"
+"~/.config/bin"          = "~/src/github.com/yu-hasebe/dotfiles/config/bin"
+"~/.zshrc/init"          = { block = "source ~/.config/init.sh" }
+
 [tools]
 lua-language-server = "latest"
 stylua = "latest"
