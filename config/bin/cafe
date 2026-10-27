@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source ~/.config/shell/_common.sh
+
+main() {
+  local _name="cafe" _icon="☕"
+  trap 'printf "\n"; _goodbye; return 0' INT TERM
+
+  printf "\033[33m"
+  cat << 'EOF'
+    ( (
+     ) )
+  .........
+  |       |]
+  \       /
+   `-----'
+EOF
+  printf "\033[0m"
+
+  info "${_icon}" "${_name}" "Welcome. Your Mac will stay awake. (Ctrl+C to leave)"
+  printf "\n"
+
+  caffeinate -d -i -m -s
+}
+
+_goodbye() {
+  printf "\n"
+  info "${_icon}" "${_name}" "See you next time. ☕"
+}
+
+main "$@"
