@@ -9,7 +9,13 @@ main() {
   trap 'printf "\n"; _goodbye; return 0' INT TERM
 
   printf "\033[33m"
-  cat << 'EOF'
+  cat <<'EOF'
+    ( (
+     ) )
+  .........
+  |       |]
+  \       /
+   `-----'
     ( (
      ) )
   .........
