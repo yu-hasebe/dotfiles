@@ -3,14 +3,12 @@ return {
 		"sindrets/diffview.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
-		keys = {
-			{ "<leader>gd", "<cmd>DiffviewOpen origin/main...HEAD<cr>", desc = "Diff vs main" },
-			{ "<leader>gD", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
-			{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
-		},
 		init = function()
 			vim.api.nvim_create_user_command("Gd", "DiffviewOpen", {})
-			vim.api.nvim_create_user_command("GD", "DiffviewClose", {})
+			vim.api.nvim_create_user_command("GD", function()
+				require("gitsigns").reset_base(true)
+				vim.cmd("DiffviewClose")
+			end, {})
 			vim.api.nvim_create_user_command("Gdp", function(opts)
 				local pr_num = opts.args
 				local gh_cmd = "gh pr view"
@@ -20,6 +18,10 @@ return {
 				if vim.v.shell_error ~= 0 then
 					vim.notify("Gdp: " .. range, vim.log.levels.ERROR)
 					return
+				end
+				local base = range:match("^(.-)%.%.%.")
+				if base then
+					require("gitsigns").change_base(base, true)
 				end
 				vim.cmd("DiffviewOpen " .. range)
 			end, { nargs = "?" })
