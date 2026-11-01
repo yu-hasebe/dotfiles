@@ -1,3 +1,11 @@
 export TENV_AUTO_INSTALL=true
 alias t='terraform'
-alias tui='tftui'
+alias tf='terraform fmt --recursive'
+alias ti='terraform import'
+alias tin='terraform init'
+alias tp='terraform plan'
+alias ta='terraform apply'
+alias tss='terraform state show'
+alias tsl='terraform state list'
+alias tsmv='terraform state mv'
+alias tsrm='terraform state rm'
